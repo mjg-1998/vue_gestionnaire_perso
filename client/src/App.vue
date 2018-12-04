@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/characters">Personnages</router-link> |
       <router-link to="/empires">Empires</router-link> |
+      <router-link to="/groups">Groupes de jeu</router-link> |
       <router-link to="/create">Ajout</router-link> |
 
     </div>

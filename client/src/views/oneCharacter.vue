@@ -1,15 +1,15 @@
 <template>
     <article class="perso">
-        <h2 class="title">{{character.mainGroup}}</h2>
         <character :character="character" />
     </article>
 </template>
 
 <script>
     import Character from "../components/Character";
+    import Empire from "../components/Empire";
     export default {
         name: "oneCharacter",
-        components: {Character},
+        components: {Empire, Character},
         data() {
             return {
                 Character: 1,

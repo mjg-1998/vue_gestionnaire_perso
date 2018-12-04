@@ -1,8 +1,9 @@
 <template>
-    <div class="inside-app">
+    <div class="inside-app" >
         <a href="#character" id="character" @click="displayProductForm" >Créer un nouveau personnage</a> |
         <a href="#empire" id="empire" @click="displayEmpireForm">Ajouter un empire</a>
         <a href="#group" id="group" @click="displayGroupForm">Ajouter un groupe</a>
+
         <form id="formcreateP">
             Nom : <input type="text" id="nomP" /><br>
             Âge : <input type="number" id="age" /><br>
@@ -47,7 +48,10 @@
         data() {
             return {
                 empires: [],
-            groups:[]
+            groups:[],
+                group: {},
+                character: {},
+                empire: {},
             }
         },
         created: function() {
