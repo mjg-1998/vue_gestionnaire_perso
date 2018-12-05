@@ -5,6 +5,8 @@
         <h4>Genre : {{ character.gender}}</h4>
         <h4>Race :{{ character.race.name}} <router-link :to="{name:'race', params: { id: character.race._id}}"> Voir les informations</router-link></h4>
         <h4>Groupe : {{ character.mainGroup.name}} <router-link :to="{name:'group', params: { id: character.mainGroup._id}}"> Voir les informations</router-link></h4>
+
+        <router-link :to="{name:'editCharacter', params: { id: character._id}}"> Modifier</router-link>
     </div>
 </template>
 

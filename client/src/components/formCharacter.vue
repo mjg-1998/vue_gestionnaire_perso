@@ -1,7 +1,7 @@
 <template>
     <form :character="character">
-        Nom : <input type="text" id="nomP" /><br>
-        Âge : <input type="number" id="age" /><br>
+        Nom : <input type="text" id="nomP" v-bind:value="character.name" /><br>
+        Âge : <input type="number" id="age" v-bind:value="character.age" /><br>
         Genre : <select id="genderSelect">
         <option value="M">M</option>
         <option value="F">F</option>
@@ -16,7 +16,7 @@
             {{option.name}}
         </option>
     </select><br>
-        <input id="subButtonP" type='button' value='CREER' @click.prevent="createNewCharacter" />
+        <input id="subButtonP" type='button' value='Valider' @click.prevent="createNewCharacter" />
     </form>
 </template>
 
@@ -31,6 +31,13 @@
             }
         },
         created: function() {
+            if(this.$route.params.id != null) {  fetch("http://localhost:3000/character/" + this.$route.params.id)
+                .then(response => response.json())
+                .then((json) => this.character = json)
+                .catch(err => console.log(err));
+
+            }
+
 
             fetch("http://localhost:3000/race/", {'method':"GET",
             })
@@ -58,7 +65,7 @@
                 };
 
                 if (this.$route.params.id != null) {
-                    fetch("http://localhost:3000/character/", {
+                    fetch("http://localhost:3000/character/"+ this.$route.params.id, {
                             'method': "PUT",
                             headers: {
                                 "Content-type": "application/json"

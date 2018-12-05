@@ -25,9 +25,11 @@ export default new Router({
         },
         {
             path: '/characters/edit/:id',
-            name: 'characterEdit',
-            component: () => import('./views/default/creationForm.vue')
+            name: 'editCharacter',
+            component: () => import('./views/characters/modifCharacter.vue')
         },
+
+
         {
             path: '/groups',
             name: 'groups',
@@ -39,6 +41,12 @@ export default new Router({
             component: () => import('./views/groups/OneGroup.vue')
         },
         {
+            path: '/groups/edit/:id',
+            name: 'editGroup',
+            component: () => import('./views/groups/modifGroup.vue')
+        },
+
+        {
             path: '/races',
             name: 'races',
             component: () => import('./views/races/Races.vue')
@@ -49,10 +57,18 @@ export default new Router({
             component: () => import('./views/races/oneRace.vue')
         },
         {
+            path: '/races/edit/:id',
+            name: 'editRace',
+            component: () => import('./views/races/modifRace.vue')
+        },
+
+        {
             path: '/create',
             name: 'create',
             component: () => import('./views/default/creationForm.vue')
         },
+
+
         {
             path: '/about',
             name: 'about',
