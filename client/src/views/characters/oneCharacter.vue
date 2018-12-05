@@ -5,11 +5,11 @@
 </template>
 
 <script>
-    import Character from "../components/Character";
-    import Empire from "../components/Empire";
+    import Character from "../../components/Character";
+
     export default {
         name: "oneCharacter",
-        components: {Empire, Character},
+        components: {Character},
         data() {
             return {
                 Character: 1,

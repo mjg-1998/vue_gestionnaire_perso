@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import Form from "../components/Form";
+    import Form from "../../components/addForm";
     export default {
         name: "creationForm",
         components: {Form}
