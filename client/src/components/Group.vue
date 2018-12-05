@@ -4,6 +4,9 @@
         <h4>Description :</h4> {{group.description}}
         <router-link :to="{name:'editGroup', params: { id: group._id}}"> Modifier</router-link>
 
+
+
+
     </div>
 </template>
 
@@ -12,7 +15,8 @@
         name: "Group",
         props: {
             group: Object
-        }
+        },
+
     }
 </script>
 

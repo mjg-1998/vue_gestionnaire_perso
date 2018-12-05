@@ -13,7 +13,8 @@
         data() {
             return {
                 Character: 1,
-                character: {}
+                character: {},
+
             }
         },
         created: function () {

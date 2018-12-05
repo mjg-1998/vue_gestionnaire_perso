@@ -5,7 +5,7 @@
         Pouvoir caractéristique : <input type="text" id ="powersE" v-bind:value="race.power"/>
         Description : <textarea id="descE" v-bind:value="race.description"> </textarea>
 
-        <input id="subButtonE" type='button' value='CREER' @click.prevent="createNewRace" />
+        <input id="subButtonE" type='button' value='Valider' @click="createNewRace" />
     </form>
 </template>
 
@@ -35,6 +35,7 @@
                     description: document.querySelector("#descE").value
                 };
                 if (this.$route.params.id != null) {
+
                     fetch("http://localhost:3000/race/"+ this.$route.params.id, {
                             'method': "PUT",
                             headers: {
@@ -44,7 +45,9 @@
                         }
                     )
                         .then(response => console.log(JSON.stringify(this.race)))
-                        .catch(err => console.log(err))
+                        .catch(err => console.log(err));
+
+
                 }
                 else {
                     fetch("http://localhost:3000/race/", {
@@ -56,8 +59,10 @@
                         }
                     )
                         .then(response => console.log(JSON.stringify(this.race)))
-                        .catch(err => console.log(err))
+                        .catch(err => console.log(err));
+
                 }
+                this.$router.push({name:'home'});
             }
         }
     }

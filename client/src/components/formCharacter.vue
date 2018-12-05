@@ -89,6 +89,7 @@
                         .then(response => console.log(JSON.stringify(this.character)))
                         .catch(err => console.log(err))
                 }
+                this.$router.push({name:'home'});
             }
         }
     }

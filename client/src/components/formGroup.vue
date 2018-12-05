@@ -55,6 +55,7 @@
                             .then(response => console.log(JSON.stringify(this.group)))
                             .catch(err => console.log(err))
                     }
+                    this.$router.push({name:'home'});
                 }
             }
     }

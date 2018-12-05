@@ -72,7 +72,7 @@ export default new Router({
         {
             path: '/about',
             name: 'about',
-            component: () => import(/* webpackChunkName: "about" */ './views/default/About.vue')
+            component: () => import('./views/default/About.vue')
         }
     ]
 })
